@@ -11,9 +11,9 @@ cat fullchain1.pem rootca_x3.pem > zimbra_ca.pem
 
 su - zimbra
 
-/opt/zimbra/bin/zmcertmgr verifycrt comm privkey1.pem cert1.pem zimbra_ca.pem
+/opt/zimbra/bin/zmcertmgr verifycrt comm privkey.pem cert.pem zimbra_ca.pem
 cp -a /opt/zimbra/ssl/zimbra /opt/zimbra/ssl/zimbra.$(date "+%Y%m%d")
-cp privkey1.pem /opt/zimbra/ssl/zimbra/commercial/commercial.key
-/opt/zimbra/bin/zmcertmgr deploycrt comm cert1.pem zimbra_ca.pem
+cp privkey.pem /opt/zimbra/ssl/zimbra/commercial/commercial.key
+/opt/zimbra/bin/zmcertmgr deploycrt comm cert.pem zimbra_ca.pem
 screen
 zmcontrol restart
