@@ -1,0 +1,4 @@
+ zmprov mcf zimbraMtaBlockedExtensionWarnRecipient FALSE
+ zmamavisdctl restart
+ zmprov mcf zimbraMtaHeaderChecks "pcre:/opt/zimbra/conf/postfix_header_checks,  pcre:/opt/zimbra/conf/custom_header_checks"
+ postfix reload
