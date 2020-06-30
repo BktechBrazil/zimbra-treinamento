@@ -1,0 +1,1 @@
+for conta in `cat contas.txt`;do echo "ca $conta \"\"";done > criar_contas.txt
