@@ -1,0 +1,3 @@
+#Executar no servidor ldap.
+# Ex.: mail.imapala.capitallinux.com.br
+zmlocalconfig -s ldap_url zimbra_ldap_password | awk '//{print  $3 }'
