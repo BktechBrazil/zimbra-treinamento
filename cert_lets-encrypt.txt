@@ -5,7 +5,7 @@ exit
 cd /root
 git clone https://github.com/letsencrypt/letsencrypt
 cd letsencrypt
-./letsencrypt-auto certonly --standalone -d mail.DOMAIN.capitallinux.com.br
+./letsencrypt-auto certonly --standalone -d `hostname -f`
 wget https://raw.githubusercontent.com/fsschmidt/temporario/master/rootca_x3.pem
 cat fullchain1.pem rootca_x3.pem > zimbra_ca.pem
 
