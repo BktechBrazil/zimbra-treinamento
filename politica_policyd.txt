@@ -1,0 +1,11 @@
+# su - zimbra
+
+zmcbpolicydctl stop
+
+cd /opt/zimbra/data/cbpolicyd/db
+
+mv cbpolicyd.sqlitedb /tmp/
+
+wget https://github.com/BktechBrazil/zimbra-policyd/raw/master/cbpolicyd.sqlitedb
+
+zmcbpolicydctl start
