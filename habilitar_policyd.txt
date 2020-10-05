@@ -1,0 +1,49 @@
+$ zmprov ms `zmhostname` +zimbraServiceEnabled cbpolicyd
+
+Após habilitar o serviço, deve-se aguardar cerca de 5 minutos, pois o sistema irá detectar automaticamente que o serviço deve estar habilitado, irá criar a base de dados (sqlite) e iniciar o serviço. A base de dados será criada no diretório /opt/zimbra/data/cbpolicyd/db.
+
+# cd /opt/zimbra/data/httpd/htdocs/ && ln -s ../../../common/share/webui
+
+
+# vim /opt/zimbra/common/share/webui/includes/config.php
+
+
+#$DB_DSN="sqlite:////tmp/cluebringer.sqlite";
+#$DB_DSN="mysql:host=localhost;dbname=cluebringer";
+$DB_DSN="sqlite:////opt/zimbra/data/cbpolicyd/db/cbpolicyd.sqlitedb";
+$DB_USER="root";
+#$DB_PASS="";
+#$DB_TABLE_PREFIX="";
+
+# vim /opt/zimbra/conf/httpd.conf
+
+#ALTERADO "index.php" no final:
+
+<IfModule dir_module>
+DirectoryIndex index.html index.html.var index.php
+</IfModule>
+
+
+#ADICIONADO NO FINAL DO ARQUIVO a proteção do diretório do policyd:
+
+Alias /webui /opt/zimbra/common/share/webui/
+<Directory /opt/zimbra/common/share/webui/>
+AllowOverride AuthConfig
+Order Deny,Allow
+Allow from all
+</Directory>
+
+vim /opt/zimbra/common/share/webui/.htaccess
+
+AuthUserFile /opt/zimbra/common/share/webui/.htpasswd
+AuthName "User and Password"
+AuthType Basic
+Require valid-user
+
+# cd /opt/zimbra/common/share/webui/
+
+# /opt/zimbra/common/bin/htpasswd -c .htpasswd admin_policyd
+
+# su - zimbra
+
+$ zmapachectl reload
