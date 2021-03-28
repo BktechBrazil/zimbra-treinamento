@@ -5,7 +5,6 @@ HOSTNAME="`hostname -f`"
 DOMAIN=`hostname -f | cut -d . -f 2,3,4,5`
 
 dnf install dnsmasq -y
-systemctl enable --now dnsmasq
 
 echo "server=8.8.4.4" >> /etc/dnsmasq.conf
 echo "server=8.8.8.8" >> /etc/dnsmasq.conf
@@ -14,3 +13,5 @@ echo "mx-host=$DOMAIN,$HOSTNAME,0" >> /etc/dnsmasq.conf
 echo "address=/$HOSTNAME/$IPADDRESS" >> /etc/dnsmasq.conf
 echo "search $DOMAIN" > /etc/resolv.conf
 echo "nameserver 127.0.0.1" >> /etc/resolv.conf
+
+systemctl enable --now dnsmasq
