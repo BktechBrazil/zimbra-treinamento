@@ -13,5 +13,6 @@ echo "mx-host=$DOMAIN,$HOSTNAME,0" >> /etc/dnsmasq.conf
 echo "address=/$HOSTNAME/$IPADDRESS" >> /etc/dnsmasq.conf
 echo "search $DOMAIN" > /etc/resolv.conf
 echo "nameserver 127.0.0.1" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
 
 systemctl enable --now dnsmasq
