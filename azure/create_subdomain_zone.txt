@@ -1,0 +1,1 @@
+az network dns zone create -g zimbra-training-2021 -n impala.bk.tec.br
