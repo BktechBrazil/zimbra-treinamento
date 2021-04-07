@@ -6,8 +6,5 @@ RESOURCEGROUP="zimbra-training-2021"
 
 for DOMINIOS in `cat dominios.txt`
 do
-  DOMINIO=`echo "$DOMINIOS" | cut -d "," -f 10`
-  
-  echo "az network dns record-set mx add-record --resource-group $RESOURCEGROUP --zone-name $DOMINIO --record-set-name \"@\" --exchange mail.$DOMINIO --preference 0"
-
-done
+  echo "az network dns record-set mx add-record --resource-group $RESOURCEGROUP --zone-name $DOMINIOS --record-set-name \"@\" --exchange mail.$DOMINIOS --preference 0"
+done 
