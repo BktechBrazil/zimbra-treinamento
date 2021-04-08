@@ -1,1 +1,5 @@
 az network dns zone create -g zimbra-training-2021 -n impala.bk.tec.br
+
+Teste com delegação do subdomínio:
+
+az network dns zone create -g MyResourceGroup -n books.mysite.com -p mysite.com
