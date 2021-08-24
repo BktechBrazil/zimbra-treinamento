@@ -22,3 +22,6 @@ cat fullchain.cer /root/rootca_x3.pem > zimbra_ca.pem
 #Copiar 3 arquivos (certificado, chave e CA) para o /tmp
 cp `hostname -f`.cer `hostname -f`.key zimbra_ca.pem /tmp/
 
+#Entrar no diretório tmp e alterar a permissão para o usuário zimbra
+chown zimbra.zimbra `hostname -f`.cer `hostname -f`.key zimbra_ca.pem
+
