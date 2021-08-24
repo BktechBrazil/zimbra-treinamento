@@ -1,5 +1,5 @@
 yum remove postfix
-yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+yum install epel-release -y
 yum install tar dnsmasq perl nmap-ncat bind-utils net-tools screen telnet vim screen htop wget rsyslog -y
 yum update -y
 sed -i s/^SELINUX=.*$/SELINUX=disabled/ /etc/selinux/config
