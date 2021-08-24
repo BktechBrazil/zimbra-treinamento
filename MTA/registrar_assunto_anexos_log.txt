@@ -1,5 +1,5 @@
  zmprov mcf zimbraMtaBlockedExtensionWarnRecipient FALSE
  zmamavisdctl restart
  cd /opt/zimbra/conf
- wget https://github.com/BktechBrazil/zimbra-treinamento/raw/master/custom_header_checks
+ wget https://github.com/BktechBrazil/zimbra-treinamento/raw/master/MTA/custom_header_checks
  zmprov mcf zimbraMtaHeaderChecks "pcre:/opt/zimbra/conf/postfix_header_checks,  pcre:/opt/zimbra/conf/custom_header_checks"
