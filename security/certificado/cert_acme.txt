@@ -26,3 +26,10 @@ cp `hostname -f`.cer `hostname -f`.key zimbra_ca.pem /tmp/
 cd /tmp
 chown zimbra.zimbra `hostname -f`.cer `hostname -f`.key zimbra_ca.pem
 
+#Validar o certificado
+su - zimbra
+cd /tmp
+/opt/zimbra/bin/zmcertmgr verifycrt comm `hostname -f`.key `hostname -f`.cer zimbra_ca.pem
+
+#O resultado deve ser 'OK'
+
