@@ -16,3 +16,6 @@ cd /root/.acme.sh
 #Entrar no diretório
 cd /root/.acme.sh/`hostname -f`
 
+#Contatenar a CA com o certificado
+cat fullchain.cer /root/rootca_x3.pem > zimbra_ca.pem
+
