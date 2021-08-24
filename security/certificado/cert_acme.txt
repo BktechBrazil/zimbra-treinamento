@@ -1,3 +1,4 @@
 cd /root
+yum install socat
 wget -O - https://get.acme.sh | sh
 wget https://raw.githubusercontent.com/fsschmidt/temporario/master/rootca_x3.pem
