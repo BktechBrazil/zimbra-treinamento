@@ -33,3 +33,9 @@ cd /tmp
 
 #O resultado deve ser 'OK'
 
+#Efetuar o deploy da chave
+cp `hostname -f`.key /opt/zimbra/ssl/zimbra/commercial/commercial.key
+
+#Efetuar o deploy do certificado e CA
+/opt/zimbra/bin/zmcertmgr deploycrt comm `hostname -f`.cer zimbra_ca.pem
+
