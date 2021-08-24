@@ -13,3 +13,6 @@ cd /root/.acme.sh
 #Emitir o certificado utilizando o hostname ex. mail.DOMINIO.capitallinux.com.br
 ./acme.sh --issue --standalone -d `hostname -f`
 
+#Entrar no diretório
+cd /root/.acme.sh/`hostname -f`
+
