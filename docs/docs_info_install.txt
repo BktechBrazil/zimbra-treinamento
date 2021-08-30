@@ -1,9 +1,6 @@
 #Executar no servidor ldap.
-# Ex.: mail.imapala.capitallinux.com.br
+# Ex.: mail.impala.bktech.io
 zmlocalconfig -s ldap_url zimbra_ldap_password | awk '//{print  $3 }'
-
-#Baixar no servidor docs
-wget https://files.zimbra.com/downloads/zimbra-docs-server/4.2.1/zimbra-docs-centos7.tgz
 
 #Documentação
 https://zimbra.github.io/adminguide/latest/#_zimbra_docs
