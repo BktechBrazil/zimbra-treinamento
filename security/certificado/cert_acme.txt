@@ -10,7 +10,7 @@ cd /root/.acme.sh
 ./acme.sh --set-default-ca --server  letsencrypt
 
 #Emitir o certificado utilizando o hostname ex. mail.DOMINIO.capitallinux.com.br
-./acme.sh --issue --standalone -d `hostname -f`
+./acme.sh --issue --standalone  --preferred-chain  "ISRG Root X1"  -d `hostname -f`
 
 #Entrar no diretório
 cd /root/.acme.sh/`hostname -f`
