@@ -16,7 +16,7 @@ cd /root/.acme.sh
 cd /root/.acme.sh/`hostname -f`
 
 #Contatenar a CA com o certificado
-
+cat fullchain.cer ISRG-X1.pem > zimbra_ca.pem
 
 #Copiar 3 arquivos (certificado, chave e CA) para o /tmp
 cp `hostname -f`.cer `hostname -f`.key zimbra_ca.pem /tmp/
