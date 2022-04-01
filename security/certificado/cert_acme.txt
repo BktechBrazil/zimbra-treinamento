@@ -3,7 +3,7 @@ zmproxyctl stop
 exit
 cd /root
 yum install socat
-wget -O - https://get.acme.sh | sh
+wget -O - https://get.acme.sh | sh -s email=my@example.com
 cd /root/.acme.sh
 
 #alterar CA para Let's Encrypt
