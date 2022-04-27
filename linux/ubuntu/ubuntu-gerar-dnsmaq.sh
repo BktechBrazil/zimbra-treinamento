@@ -15,4 +15,5 @@ echo "search $DOMAIN" > /etc/resolv.conf
 echo "nameserver 127.0.0.1" >> /etc/resolv.conf
 chattr +i /etc/resolv.conf
 
-systemctl enable --now dnsmasq
+systemctl enable dnsmasq
+systemctl restart dnsmasq
