@@ -4,7 +4,7 @@ IPADDRESS="`ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'`"
 HOSTNAME="`hostname -f`"
 DOMAIN=`hostname -f | cut -d . -f 2,3,4,5`
 
-dnf install dnsmasq -y
+aptitude install dnsmasq -y
 
 echo "server=8.8.4.4" >> /etc/dnsmasq.conf
 echo "server=8.8.8.8" >> /etc/dnsmasq.conf
