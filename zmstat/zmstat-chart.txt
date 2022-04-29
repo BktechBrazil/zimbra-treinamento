@@ -1,0 +1,8 @@
+su – zimbra
+mkdir /tmp/charts/
+zmstat-chart -s /opt/zimbra/zmstat -d /tmp/charts
+cp -ax /tmp/charts /opt/zimbra/jetty/webapps/zimbra/public/
+
+No navegador:
+
+https://mail.SUBDOMAIN.domain.com.br/public/charts/index.html
