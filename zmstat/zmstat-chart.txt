@@ -1,3 +1,15 @@
+Como root:
+
+-RHEL/CentOS/Oracle/Rocky
+
+yum install fontconfig
+
+-Ubuntu
+
+aptitude install fontconfig
+
+-----
+
 su – zimbra
 mkdir /tmp/charts/
 zmstat-chart -s /opt/zimbra/zmstat -d /tmp/charts
