@@ -3,7 +3,10 @@ https://wiki.zimbra.com/wiki/Enforcing_a_match_between_FROM_address_and_sasl_use
 
 Zimbra 8.8. e 9.0:
 
+*EXECUTAR COM O USUÁRIO ZIMBRA*
+
 #Rejeitar "MAIL FROM" falso de domínios externos
+su - zimbra
 zmprov mcf zimbraMtaSmtpdRejectUnlistedRecipient yes
 zmprov mcf zimbraMtaSmtpdRejectUnlistedSender yes
 
