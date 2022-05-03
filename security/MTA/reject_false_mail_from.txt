@@ -16,7 +16,7 @@ zmprov mcf zimbraMtaSmtpdSaslAuthenticatedHeader yes
 
 #Rejeitar "MAIL FROM" alterado de usuários internos
 #Sem "exception db" - sem envios de caixas compartilhadas e/ou listas
-zmprov mcf zimbraMtaSmtpdSenderLoginMaps  proxy:ldap:/opt/zimbra/conf/ldap-slm.cf +zimbraMtaSmtpdSenderRestrictions reject_authenticated_sender_login_mismatch
+zmprov mcf zimbraMtaSmtpdSenderLoginMaps "proxy:ldap:/opt/zimbra/conf/ldap-slm.cf +zimbraMtaSmtpdSenderRestrictions reject_authenticated_sender_login_mismatch"
 
 zmmtactl restart
 zmconfigdctl restart
