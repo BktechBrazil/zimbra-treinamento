@@ -49,5 +49,7 @@ Require valid-user
 $ zmapachectl reload
 
 Acesso a interface WEB:
-
 http://mail.subdominio.dominio.com.br:7780/webui/
+
+Arquivo de log do PolicyD:
+/opt/zimbra/log/cbpolicyd.log 
