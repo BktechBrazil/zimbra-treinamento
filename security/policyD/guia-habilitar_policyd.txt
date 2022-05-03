@@ -47,3 +47,7 @@ Require valid-user
 # su - zimbra
 
 $ zmapachectl reload
+
+Acesso a interface WEB:
+
+http://mail.subdominio.dominio.com.br:7780/webui/
