@@ -1,8 +1,19 @@
 https://wiki.zimbra.com/wiki/Rejecting_false_%22mail_from%22_addresses
+https://wiki.zimbra.com/wiki/Enforcing_a_match_between_FROM_address_and_sasl_username_8.5
 
 Zimbra 8.8. e 9.0:
 
+#Rejeitar "MAIL FROM" falso de domínios externos
 zmprov mcf zimbraMtaSmtpdRejectUnlistedRecipient yes
 zmprov mcf zimbraMtaSmtpdRejectUnlistedSender yes
+
+#Habilitar o header "X-Authenticated-User"
+zmprov mcf zimbraSmtpSendAddAuthenticatedUser TRUE
+zmprov mcf zimbraMtaSmtpdSaslAuthenticatedHeader yes
+
+#Rejeitar "MAIL FROM" alterado de usuários internos
+#Sem "exception db" - sem envios de caixas compartilhadas e/ou listas
+zmprov mcf zimbraMtaSmtpdSenderLoginMaps  proxy:ldap:/opt/zimbra/conf/ldap-slm.cf +zimbraMtaSmtpdSenderRestrictions reject_authenticated_sender_login_mismatch
+
 zmmtactl restart
 zmconfigdctl restart
