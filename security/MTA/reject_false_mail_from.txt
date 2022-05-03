@@ -1,1 +1,8 @@
+https://wiki.zimbra.com/wiki/Rejecting_false_%22mail_from%22_addresses
 
+Zimbra 8.8. e 9.0:
+
+zmprov mcf zimbraMtaSmtpdRejectUnlistedRecipient yes
+zmprov mcf zimbraMtaSmtpdRejectUnlistedSender yes
+zmmtactl restart
+zmconfigdctl restart
