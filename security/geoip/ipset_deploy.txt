@@ -21,22 +21,24 @@ for i in `cat ru.zone`;do ipset add countryblock $i;done
 for i in `cat ni.zone`;do ipset add countryblock $i;done
 
 
-Criar regra:
+Criar a regra:
 
 iptables -A INPUT -m set --match-set countryblock src -j DROP
+
+Remover a regra:
 
 iptables -D INPUT -m set --match-set countryblock src -j DROP
 
 
 Tornar persistente:
 
-On Debian based system
+ Debian based
 
 # ipset save > /etc/ipset.up.rules
 # iptables-save > /etc/iptables/rules.v4
 
 
-On RHEL based system
+ RHEL based
 
 ipset save > /etc/ipset.up.rules
 iptables-save > /etc/sysconfig/iptables
