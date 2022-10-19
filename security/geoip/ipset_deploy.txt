@@ -1,0 +1,42 @@
+fonte: https://linoxide.com/block-ips-country-ipset/
+
+yum install ipset OU   apt-get install ipset
+
+cd /root
+mkdir geoip
+cd geoip
+
+wget --no-check-certificate http://www.ipdeny.com/ipblocks/data/countries/all-zones.tar.gz
+
+tar zxvf all-zones.tar.gz
+
+ipset create countryblock nethash
+
+
+Exemplo de países:
+
+for i in `cat cn.zone`;do ipset add countryblock $i;done
+for i in `cat in.zone`;do ipset add countryblock $i;done
+for i in `cat ru.zone`;do ipset add countryblock $i;done
+for i in `cat ni.zone`;do ipset add countryblock $i;done
+
+
+Criar regra:
+
+iptables -A INPUT -m set --match-set countryblock src -j DROP
+
+iptables -D INPUT -m set --match-set countryblock src -j DROP
+
+
+Tornar persistente:
+
+On Debian based system
+
+# ipset save > /etc/ipset.up.rules
+# iptables-save > /etc/iptables/rules.v4
+
+
+On RHEL based system
+
+ipset save > /etc/ipset.up.rules
+iptables-save > /etc/sysconfig/iptables
