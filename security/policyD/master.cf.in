@@ -1,0 +1,2 @@
+    -o smtpd_end_of_data_restrictions=check_policy_service,inet:localhost:10031
+    -o smtpd_recipient_restrictions=check_policy_service,inet:localhost:10031
