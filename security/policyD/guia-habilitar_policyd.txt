@@ -1,3 +1,4 @@
+$ zmprov ms `zmhostname` +zimbraServiceInstalled cbpolicyd
 $ zmprov ms `zmhostname` +zimbraServiceEnabled cbpolicyd
 
 Após habilitar o serviço, deve-se aguardar cerca de 5 minutos, pois o sistema irá detectar automaticamente que o serviço deve estar habilitado, irá criar a base de dados (sqlite) e iniciar o serviço. A base de dados será criada no diretório /opt/zimbra/data/cbpolicyd/db.
