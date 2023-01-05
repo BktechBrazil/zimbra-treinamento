@@ -3,3 +3,4 @@ dnf install tar dnsmasq perl nmap-ncat bind-utils net-tools screen telnet vim sc
 dnf update -y
 sed -i s/^SELINUX=.*$/SELINUX=disabled/ /etc/selinux/config
 setenforce 0
+systemctl disable --now firewalld
