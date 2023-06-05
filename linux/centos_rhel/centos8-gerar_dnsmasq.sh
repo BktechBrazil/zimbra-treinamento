@@ -6,7 +6,7 @@ DOMAIN=`hostname -f | cut -d . -f 2,3,4,5`
 
 dnf install dnsmasq -y
 
-echo "server=8.8.4.4" >> /etc/dnsmasq.conf
+echo "server=1.1.1.1" >> /etc/dnsmasq.conf
 echo "server=8.8.8.8" >> /etc/dnsmasq.conf
 echo "domain=$DOMAIN" >> /etc/dnsmasq.conf
 echo "mx-host=$DOMAIN,$HOSTNAME,0" >> /etc/dnsmasq.conf
