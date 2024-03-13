@@ -1,7 +1,7 @@
 https://wiki.zimbra.com/wiki/Rejecting_false_%22mail_from%22_addresses
 https://wiki.zimbra.com/wiki/Enforcing_a_match_between_FROM_address_and_sasl_username_8.5
 
-Zimbra 8.8. e 9.0:
+Zimbra 8.8.x,  9 e 10:
 
 *EXECUTAR COM O USUÁRIO ZIMBRA*
 
