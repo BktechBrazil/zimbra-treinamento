@@ -9,7 +9,7 @@ yum install socat
 
 - Ubuntu:
 
-aptitude install socat
+apt-get install socat
 
 wget -O - https://get.acme.sh | sh -s email=my@example.com
 cd /root/.acme.sh
