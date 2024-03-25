@@ -6,7 +6,7 @@ yum install fontconfig
 
 -Ubuntu
 
-aptitude install fontconfig
+apt-get install fontconfig
 
 -----
 
