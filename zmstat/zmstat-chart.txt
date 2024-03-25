@@ -10,7 +10,7 @@ apt-get install fontconfig
 
 -----
 
-su – zimbra
+su - zimbra
 mkdir /tmp/charts/
 zmstat-chart -s /opt/zimbra/zmstat -d /tmp/charts
 cp -ax /tmp/charts /opt/zimbra/jetty/webapps/zimbra/public/
