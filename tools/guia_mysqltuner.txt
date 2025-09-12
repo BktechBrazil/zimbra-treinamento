@@ -1,2 +1,27 @@
 wget http://mysqltuner.pl/ -O mysqltuner.pl
 chmod u+x mysqltuner.pl
+./mysqltuner.pl
+
+Visualizar as informações em InnoDB Metrics.
+
+Exemplo:
+
+-------- InnoDB Metrics ----------------------------------------------------------------------------
+ℹ  InnoDB is enabled.
+ℹ  InnoDB Thread Concurrency: 0
+✔  InnoDB File per table is activated
+✔  InnoDB Buffer Pool size ( 7.0G ) under limit for 64 bits architecture: (17179869184.0G )
+✔  InnoDB buffer pool / data size: 7.0G / 5.4M
+✘  Ratio InnoDB log file size / InnoDB Buffer pool size (14.0232786425466%): 500.0M * 2 / 7.0G should be equal to 25%
+✘  InnoDB buffer pool instances: 8
+✘  Cannot calculate InnoDB Buffer Pool Chunk breakdown due to missing or zero values:
+ℹ   - innodb_buffer_pool_size: 7477395456
+ℹ   - innodb_buffer_pool_chunk_size: undefined
+ℹ   - innodb_buffer_pool_instances: 8
+✔  InnoDB Read buffer efficiency: 99.88% (595079 hits / 595771 total)
+✘  InnoDB Write Log efficiency: 60.98% (4443 hits / 7286 total)
+✔  InnoDB log waits: 0.00% (0 waits / 2843 writes)
+
+Ajustar sempre o "InnoDB buffer pool" para ser MAIOR que o "Data Size":
+
+✔  InnoDB buffer pool / data size: 7.0G / 5.4M
