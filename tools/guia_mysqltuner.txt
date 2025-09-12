@@ -25,3 +25,15 @@ Exemplo:
 Ajustar sempre o "InnoDB buffer pool" para ser MAIOR que o "Data Size":
 
 ✔  InnoDB buffer pool / data size: 7.0G / 5.4M
+
+Alteração é efetuada em:
+
+vim /opt/zimbra/conf/my.cnf
+
+Alterar o parametro: 
+
+innodb_buffer_pool_size
+
+mysql.server restart
+
+
