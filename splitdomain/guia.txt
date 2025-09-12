@@ -1,1 +1,5 @@
 Roteiro de Split Domain
+
+-> No servidor primário (MX)
+
+-> No servidor secundário 
