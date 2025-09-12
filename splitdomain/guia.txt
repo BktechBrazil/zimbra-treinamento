@@ -3,3 +3,8 @@ Roteiro de Split Domain
 -> No servidor primário (MX)
 
 -> No servidor secundário 
+
+
+Exemplo de documentação Exchange 365 (Hybrid):
+
+https://learn.microsoft.com/pt-br/exchange/exchange-hybrid
