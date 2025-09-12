@@ -1,1 +1,7 @@
 Zimbra Modern
+
+$ zmprov mcf +zimbraCustomMimeHeaderNameAllowed Sensitivity
+https://github.com/Zimbra/zimbra-zimlet-confidential-header/releases/download/0.0.1/zimbra-zimlet-confidential-header.zip
+
+Marcar opção de limpar cache do zimlet, caso não faça:
+$ zmprov fc zimlet
