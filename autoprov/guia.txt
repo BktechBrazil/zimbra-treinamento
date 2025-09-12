@@ -1,2 +1,34 @@
 https://zimbra.github.io/documentation/zimbra-10/adminguide.html#_auto_provisioning_new_accounts_from_external_ldap
 https://wiki.zimbra.com/wiki/How_to_configure_auto-provisioning_with_AD
+
+Exemplo:
+
+#Obter configuração
+zmprov gd impala.capitallinux.com.br | grep zimbraAutoProv
+
+
+#CONFIGURAÇÃO PARA EAGER
+zmprov md impala.capitallinux.com.br zimbraAutoProvMode EAGER
+zmprov md impala.capitallinux.com.br zimbraAutoProvBatchSize 10
+zmprov ms $(zmhostname) +zimbraAutoProvPollingInterval 300s
+zmprov ms $(zmhostname) +zimbraAutoProvScheduledDomains impala.capitallinux.com.br
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapAdminBindDn "impala.local/Usuarios de Sistema/conexao.zimbra"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapURL "ldap://servidor-ad01.impala.capitallinux.com.br:389"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapAdminBindPassword "SENHA"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapSearchBase "ou=Objetos Corporativos,dc=impala,dc=local"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapSearchFilter "(&(objectCategory=Person)(sAMAccountName=%u))"
+zmprov md impala.capitallinux.com.br zimbraAutoProvAccountNameMap sAMAccountName
+
+
+#MODIFICAR PROVISIONAMENTO PARA LAZY
+zmprov md impala.capitallinux.com.br zimbraAutoProvMode LAZY
+zmprov md impala.capitallinux.com.br zimbraAutoProvAuthMech LDAP
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapAdminBindDn "impala.local/Usuarios de Sistema/conexao.zimbra"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapURL "ldap://servidor-ad01.impala.capitallinux.com.br:389"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapAdminBindPassword "SENHA"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapSearchBase "ou=Objetos Corporativos,dc=impala,dc=local"
+zmprov md impala.capitallinux.com.br zimbraAutoProvLdapSearchFilter "(&(objectCategory=Person)(sAMAccountName=%u))"
+zmprov md impala.capitallinux.com.br zimbraAutoProvAccountNameMap sAMAccountName
+
+
+
