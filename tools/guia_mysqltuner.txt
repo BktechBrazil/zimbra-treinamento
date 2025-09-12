@@ -1,1 +1,2 @@
 wget http://mysqltuner.pl/ -O mysqltuner.pl
+chmod u+x mysqltuner.pl
