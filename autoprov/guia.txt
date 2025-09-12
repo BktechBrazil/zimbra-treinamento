@@ -1,0 +1,2 @@
+https://zimbra.github.io/documentation/zimbra-10/adminguide.html#_auto_provisioning_new_accounts_from_external_ldap
+https://wiki.zimbra.com/wiki/How_to_configure_auto-provisioning_with_AD
